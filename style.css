@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
+
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    }
+
+    body
+    {
+    padding: 0,10px;
+    background: rgb(129, 103, 103);
+
+    }
+
+    .wrapper
+    {
+        max-width: 430px;
+        width: 100%;
+        background: rgb(235, 225, 225);
+        margin: 10px auto;
+        height: 600px;
+        padding: 30px;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+    }
+    .wrapper .title
+    {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .wrapper .form
+    {
+        width: 60%;
+        font-size: medium;
+        align-self: center;
+        height: 100%;
+        
+    }
+    .wrapper .form .inputfield
+    {
+        width: 100%;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+       
+    }
+    .wrapper .form .inputfield .label
+    {
+        display: inline-block;
+        width: 100%;
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    .wrapper .form .inputfield .ifield
+    {
+        display: inline-block;
+        border-radius: 2px;
+        margin-left: 150px;
+        padding: 2px;
+    }
+    .wrapper .form .inputfield .btn
+    {
+        
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          
+    }

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Registration Form</title>
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+         <div class="title"> Registration Form</div>
+            
+            <div class="form">
+        <form action="message.html" onsubmit="return formValidation()">
+       
+            
+            <div class="inputfield">
+             <label id="fnlabel">First Name:</label>
+       <input type="text" class="ifield" id="fname" placeholder="First Name"></div><br>
+        
+        <div class="inputfield">
+       <label id="lnlabel">Last Name:</label>
+       <input type="text" class="ifield" id="lname" placeholder="Last Name"></div><br>
+        
+        <div class="inputfield">
+       <label id="emaillabel" style="visibility: visible;"> Email:</label>
+       <input type="text" class="ifield" id="email" placeholder="asdf@gmail.com"></div><br>
+        
+        <div class="inputfield">
+       <label id="numlabel" style="visibility: visible;">Mobile:</label>
+       <input type="text" class="ifield" id="number"></div><br>
+        
+        <div class="inputfield">
+       <label id="doblabel" class="check" style="visibility: visible;"> Date of Birth:</label>
+       <input type="date" class="ifield" id="dob" max="2000-01-02" min="1910-01-01"></div><br>
+        
+        
+       <div class="inputfield"> <label id="passlabel" style="visibility: visible;">Password:</label>
+      <input type="password" class="ifield" id="pass" placeholder="password"></div><br>
+      <p id="eresult" style="color: red;"></p>
+        <div class="inputfield">
+        <input type="reset" class="btn"><input type="submit" value="Register" class="btn"><br>
+            
+        
+</form>
+    
+</div>
+     <script type="text/javascript">
+         
+                function formValidation()
+        {
+            var fn = document.getElementById("fname").value;
+            var ln = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var num = document.getElementById("number").value;
+            var dob = document.getElementById("dob").value;
+            var pass = document.getElementById("pass").value;   
+
+                 
+            
+            //  Email Validation
+            var patt1 = /[a-z 0-9\.-]@[a-z 0-9\-].[a-z]{2,8}/i;
+
+            //Mobile Number Validation
+            var patt2 = /[7-9][0-9]{9}/;
+          
+ //we can also use required attribute in input tag           
+            if(fn =="" || ln =="" || email =="" || num =="" || dob =="" || pass =="")
+            {
+                document.getElementById("eresult").innerHTML = "*All Fields are Required";
+               return false;
+            }
+            else if(fn.trim() == "" || ln.trim() == "" || email.trim() =="" || num.trim() =="" || pass.trim() =="")
+            {
+                document.getElementById("eresult").innerHTML = "*Blank Field Not Allowed";
+                return false;
+            }
+            else if(fn.length>15 || ln.length>15)
+            {
+                document.getElementById("eresult").innerHTML = "*Name is too big(Max 15 Character)";
+                return false;
+            }
+           
+             else if(pass.length<8 || pass.length>20)
+            { 
+                document.getElementById("eresult").innerHTML = "Password must contain 8-20 Character.";
+                return false;
+            }
+            else if(patt1.test(email) && patt2.test(num))
+            {
+                return true;
+            }
+            else 
+            {
+                document.getElementById("eresult").innerHTML = "*Invalid Email or Mobile Number";
+                return false;
+            }      
+         
+            
+           
+        }
+    
+    
+    
+    </script>
+    </div>
+</body>
+</html>
